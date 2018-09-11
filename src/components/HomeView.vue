@@ -1,14 +1,30 @@
 <template>
-  <ul class="list">
-  </ul>
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Generar</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Genera un Codigo Unico consumible
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Ver Estadisticas
+    </a>
+  </div>
+</div>
 </template>
 <script>
 export default {
 }
 </script>
-<style scoped>
-  .list {
-    width: 100%;
-    padding: 0;
-  }
+<style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
 </style>
