@@ -5,7 +5,6 @@ import DetailView from '@/components/DetailView'
 import PostView from '@/components/PostView'
 
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
