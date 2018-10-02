@@ -32,8 +32,14 @@ export default {
   },
   methods : {
     generarCodigo (){
-      var md5 = require('md5');
-      this.codigo = md5(Date.now())
+      const Cryptr = require('cryptr');
+      const cryptr = new Cryptr("-Semilla")
+      
+      const encryptedString = cryptr.encrypt(new Date())
+      const decryptedString = cryptr.decrypt(encryptedString)
+      
+      this.codigo = encryptedString // 5590fd6409be2494de0226f5d7
+      
     }
   }
 }
