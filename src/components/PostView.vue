@@ -23,7 +23,7 @@
 </div>
 </template>
 <script>
-
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -37,14 +37,12 @@ export default {
       const cryptr = new Cryptr("-Semilla")
       
       const decryptedString = cryptr.decrypt(this.codigo)
-      console.log(decryptedString)
-      alert(new Date(decryptedString)) // 5590fd6409be2494de0226f5d7
-      
+      //console.log(decryptedString)
 
-     
-     
-
-     
+      //alert(new Date(decryptedString)) // 5590fd6409be2494de0226f5d7
+      axios.post('https://sebastianrest.herokuapp.com/cupon',{codigo:this.decryptedString,consumido:'si'})
+      .then(response => {console.log(response)})
+      .catch(error => {console.log(error)})
   }
  }
 }
