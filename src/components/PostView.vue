@@ -13,7 +13,7 @@
   </div>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" @click="consumirCodigo()">
+    <a :disabled="isDisabled" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" @click="consumirCodigo()">
       Consumir cupon
     </a>
   </div>
@@ -27,12 +27,13 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      codigo :""
+      codigo :"",
+      isDisabled : false
     }
   },
   methods : {
     consumirCodigo (){
-      
+      this.isDisabled = true
       const Cryptr = require('cryptr');
       const cryptr = new Cryptr("-Semilla")
       
@@ -58,10 +59,13 @@ export default {
       .then(response => {
         alert('El cupon es Correcto , cupon consumido no se podra usar nuevamente')
         console.log(response)
+        this.isDisabled=false
+        this.codigo=''
         })
       .catch(error => {
         alert('Ocurrio un Error en el Server')
         console.log(error)
+        this.isDisabled=false
         })
       }    
   }

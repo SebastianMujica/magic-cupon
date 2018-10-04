@@ -27,7 +27,7 @@
 export default {
   data () {
     return {
-      codigo :"Haz click en generar código"
+      codigo :""
     }
   },
   methods : {
