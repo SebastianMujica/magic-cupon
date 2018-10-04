@@ -27,7 +27,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      codigo :"Comprueba tu cupon"
+      codigo :""
     }
   },
   methods : {

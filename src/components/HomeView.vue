@@ -8,7 +8,7 @@
   </div>
   <div class="mdl-card__supporting-text">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" v-model="codigo">
+    <input class="mdl-textfield__input" type="text" id="sample3" v-model="codigo" readonly>
     <label class="mdl-textfield__label" for="sample3">codigo...</label>
   </div>
   </div>
