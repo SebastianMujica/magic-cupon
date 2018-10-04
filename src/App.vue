@@ -5,13 +5,6 @@
         <span class="mdl-layout-title">Magic Cupon</span>
       </div>
     </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Magic Cupon</span>
-      <nav class="mdl-navigation">
-        <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
-        <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">Post a picture</router-link>
-      </nav>
-    </div>
     <main class="mdl-layout__content">
       <div class="page-content">
         <router-view></router-view>

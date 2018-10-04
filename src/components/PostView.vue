@@ -36,13 +36,34 @@ export default {
       const Cryptr = require('cryptr');
       const cryptr = new Cryptr("-Semilla")
       
+      if (this.codigo.length < 16){
+        alert('Cupon Invalido')
+      }
+      
       const decryptedString = cryptr.decrypt(this.codigo)
+      
       //console.log(decryptedString)
-
-      //alert(new Date(decryptedString)) // 5590fd6409be2494de0226f5d7
-      axios.post('https://sebastianrest.herokuapp.com/cupon',{codigo:this.decryptedString,consumido:'si'})
-      .then(response => {console.log(response)})
-      .catch(error => {console.log(error)})
+      if (isNaN(Date.parse(decryptedString))){
+        alert('Cupon Invalido')
+      }else{
+      axios({
+              method: 'post',
+              headers:{'Access-Control-Allow-Origin': '*','Content-Type': 'application/json'},
+              url: 'https://sebastianrest.herokuapp.com/api/cupons/',
+              data: {
+                codigo: this.codigo,
+                consumido: decryptedString
+            }
+          })
+      .then(response => {
+        alert('El cupon es Correcto , cupon consumido no se podra usar nuevamente')
+        console.log(response)
+        })
+      .catch(error => {
+        alert('Ocurrio un Error en el Server')
+        console.log(error)
+        })
+      }    
   }
  }
 }

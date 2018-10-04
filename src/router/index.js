@@ -8,12 +8,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/tuclavesecreta',
       name: 'home',
       component: HomeView
     },
     {
-      path: '/post',
+      path: '/',
       name: 'post',
       component: PostView
     }
